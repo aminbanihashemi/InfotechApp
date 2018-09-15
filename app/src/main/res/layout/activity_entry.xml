@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:context=".EntryActivity"
+    android:background="#2d3436">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/imagelogo"
+        android:layout_width="wrap_content"
+        android:src="@drawable/mabnafartaklogo"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="30dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:id="@+id/textentry"
+        android:text="لطفا کارت خود را نزدیک کنید ..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="4">
+
+        <console.infotech.myapplication.customView.MyButtonView
+            android:id="@+id/turnOff"
+            android:layout_weight="2"
+            android:text="خاموش"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <console.infotech.myapplication.customView.MyButtonView
+            android:id="@+id/setting"
+            android:text="تنظیمات"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>
