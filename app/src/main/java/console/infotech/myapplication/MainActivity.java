@@ -1,5 +1,6 @@
 package console.infotech.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -21,7 +22,6 @@ import console.infotech.myapplication.Utility.Utilities;
 
 public class MainActivity extends AppCompatActivity {
     LottieAnimationView animationView;
-    Toolbar toolbar;
     TextView dateAndTime;
 
     @Override
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        Intent intent = getIntent();
         bind();
 
         Date currentTime = Calendar.getInstance().getTime();
@@ -49,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
     private void bind() {
 
         dateAndTime = findViewById(R.id.dateAndTime);
-        toolbar = findViewById(R.id.toolbar);
         animationView = findViewById(R.id.animation_setting);
         animationView.playAnimation();
 

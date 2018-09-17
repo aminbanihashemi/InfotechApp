@@ -4,235 +4,258 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#b2bec3"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="#b2bec3">
+    android:weightSum="10"
+    tools:context=".MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="#2d3436">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#2d3436"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/animation_setting"
-                app:lottie_loop="true"
-                app:lottie_colorFilter="#fff"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                app:lottie_colorFilter="#fff"
                 app:lottie_fileName="gear.json"
-                android:layout_alignParentLeft="true"/>
+                app:lottie_loop="true" />
 
             <console.infotech.myapplication.customView.MyTextView
-                android:maxLines="2"
-                android:textStyle="bold"
-                android:textColor="#fff"
                 android:id="@+id/dateAndTime"
-                android:gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true" />
-
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:textColor="#fff"
+                android:textStyle="bold" />
         </RelativeLayout>
 
-    </android.support.v7.widget.Toolbar>
+    </LinearLayout>
 
     <LinearLayout
-        android:padding="12dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
         android:orientation="horizontal"
+        android:padding="12dp"
         android:weightSum="80">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="20"
+            android:orientation="vertical"
             android:weightSum="10">
 
             <ImageView
-                android:layout_gravity="top"
-                android:layout_weight="5"
-                android:src="@drawable/defprofilepicture"
                 android:id="@+id/driverImage"
                 android:layout_width="match_parent"
-                android:layout_height="0dp" />
+                android:layout_height="0dp"
+                android:layout_gravity="top"
+                android:layout_weight="5"
+                android:src="@drawable/defprofilepicture" />
 
             <console.infotech.myapplication.customView.MyTextView
-                android:gravity="center_horizontal"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="bottom"
-                android:layout_weight="1"
-                android:text="سید امین بنی هاشمی"
                 android:id="@+id/driverName"
                 android:layout_width="match_parent"
-                android:layout_height="0dp" />
+                android:layout_height="0dp"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="سید امین بنی هاشمی" />
 
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="10dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
             android:layout_weight="20"
             android:orientation="vertical"
-            android:weightSum="10"
-            android:layout_gravity="center">
+            android:weightSum="10">
+
             <console.infotech.myapplication.customView.MyTextView
-                android:gravity="center_vertical|center_horizontal"
-                android:textSize="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
                 android:background="@drawable/gradienttwo"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:text="مبلغ خرید شارژ امروز"
-                android:layout_weight="4"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
+                android:textSize="30dp" />
+
             <console.infotech.myapplication.customView.MyTextView
-                android:gravity="center_vertical|center_horizontal"
-                android:textStyle="bold"
-                android:textSize="25dp"
-                android:textColor="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
                 android:background="#252050"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:text="01"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
             <console.infotech.myapplication.customView.MyTextView
-                android:gravity="center_vertical|center_horizontal"
-                android:textSize="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_weight="4"
                 android:background="@drawable/gradient"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:text="تعداد مسافرین امروز"
-                android:layout_weight="4"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
+                android:textSize="30dp" />
+
             <console.infotech.myapplication.customView.MyTextView
-                android:textStyle="bold"
-                android:textSize="25dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:textColor="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
                 android:background="#042845"
+                android:gravity="center_vertical|center_horizontal"
                 android:text="04"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="10dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
             android:layout_weight="20"
             android:orientation="vertical"
-            android:weightSum="10"
-            android:layout_gravity="center">
+            android:weightSum="10">
 
             <console.infotech.myapplication.customView.MyTextView
-                android:gravity="center_vertical|center_horizontal"
-                android:textSize="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
                 android:background="@drawable/gradientthree"
-                android:layout_gravity="center_horizontal"
-                android:text="تعداد کارت درب عقب ایستگاه"
-                android:layout_weight="4"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
-            <console.infotech.myapplication.customView.MyTextView
-                android:textStyle="bold"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="25dp"
-                android:textColor="#fff"
+                android:text="تعداد کارت درب عقب ایستگاه"
+                android:textSize="25dp" />
+
+            <console.infotech.myapplication.customView.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
                 android:background="#004033"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:text="02"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
-            <console.infotech.myapplication.customView.MyTextView
-                android:gravity="center_vertical|center_horizontal"
-                android:textSize="25dp"
-                android:background="@drawable/gradientfour"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
-                android:text="تعداد کارت درب عقب ایستگاه"
-                android:layout_weight="4"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
-            <console.infotech.myapplication.customView.MyTextView
-                android:textStyle="bold"
-                android:gravity="center_vertical|center_horizontal"
-                android:textSize="25dp"
                 android:textColor="#fff"
-                android:background="#491011"
-                android:text="05"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <console.infotech.myapplication.customView.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_weight="4"
+                android:background="@drawable/gradientfour"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="تعداد کارت درب عقب ایستگاه"
+                android:textSize="25dp" />
+
+            <console.infotech.myapplication.customView.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
+                android:background="#491011"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="05"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="10dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
             android:layout_weight="20"
             android:orientation="vertical"
-            android:weightSum="10"
-            android:layout_gravity="center">
+            android:weightSum="10">
+
             <console.infotech.myapplication.customView.MyTextView
-                android:gravity="center_vertical|center_horizontal"
-                android:textSize="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
                 android:background="@drawable/gradientfive"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:text="مبلغ ریالی درب جلو"
-                android:layout_weight="4"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
+                android:textSize="25dp" />
+
             <console.infotech.myapplication.customView.MyTextView
-                android:textStyle="bold"
-                android:gravity="center_vertical|center_horizontal"
-                android:textSize="25dp"
-                android:textColor="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
                 android:background="#64512d"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:text="03"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
-            <console.infotech.myapplication.customView.MyTextView
-                android:gravity="center_vertical|center_horizontal"
-                android:textSize="25dp"
-                android:background="@drawable/gradientsix"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
-                android:text="مبلغ ریالی درب عقب"
-                android:layout_weight="4"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
-            <console.infotech.myapplication.customView.MyTextView
-                android:textStyle="bold"
-                android:gravity="center_vertical|center_horizontal"
-                android:textSize="25dp"
                 android:textColor="#fff"
-                android:background="#582b20"
-                android:text="06"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <console.infotech.myapplication.customView.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_weight="4"
+                android:background="@drawable/gradientsix"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="مبلغ ریالی درب عقب"
+                android:textSize="25dp" />
+
+            <console.infotech.myapplication.customView.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp" />
+                android:background="#582b20"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="06"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#2d3436"
+        android:orientation="horizontal">
 
     </LinearLayout>
 

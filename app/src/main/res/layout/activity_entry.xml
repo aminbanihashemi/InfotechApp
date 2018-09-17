@@ -4,46 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#b2bec3"
     android:orientation="vertical"
-    android:padding="12dp"
-    tools:context=".EntryActivity"
-    android:background="#2d3436">
-
-    <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/imagelogo"
-        android:layout_width="wrap_content"
-        android:src="@drawable/mabnafartaklogo"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:gravity="center_horizontal|center_vertical"
-        android:textSize="30dp"
-        android:textColor="#fff"
-        android:textStyle="bold"
-        android:id="@+id/textentry"
-        android:text="لطفا کارت خود را نزدیک کنید ..."
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    android:weightSum="10"
+    tools:context=".EntryActivity">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="4">
-
-        <console.infotech.myapplication.customView.MyButtonView
-            android:id="@+id/turnOff"
-            android:layout_weight="2"
-            android:text="خاموش"
-            android:layout_width="0dp"
-            android:layout_height="match_parent" />
-        <console.infotech.myapplication.customView.MyButtonView
-            android:id="@+id/setting"
-            android:text="تنظیمات"
-            android:layout_weight="2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#2d3436">
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:padding="12dp"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/imglogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/mabnafartaklogo" />
+
+        <TextView
+            android:id="@+id/tvEntry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="لطفا کارت خود را نزدیک کنید ..."
+            android:textColor="#fff"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <console.infotech.myapplication.customView.MyButtonView
+                android:id="@+id/btnTurnOff"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="خاموش"
+                android:layout_marginLeft="24dp"/>
+
+            <console.infotech.myapplication.customView.MyButtonView
+                android:id="@+id/btnSetting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="تنظیمات"
+                android:layout_marginRight="24dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#2d3436">
+
+
+    </LinearLayout>
+
 
 </LinearLayout>
