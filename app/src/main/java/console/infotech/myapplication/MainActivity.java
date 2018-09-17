@@ -1,5 +1,6 @@
 package console.infotech.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import console.infotech.myapplication.Utility.Utilities;
 public class MainActivity extends AppCompatActivity {
     LottieAnimationView animationView;
     TextView dateAndTime;
-
+    Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        mContext=this;
         Intent intent = getIntent();
         bind();
 
@@ -41,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         animationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Setting Clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext,SettingActivity.class);
+                startActivity(intent);
             }
         });
 
