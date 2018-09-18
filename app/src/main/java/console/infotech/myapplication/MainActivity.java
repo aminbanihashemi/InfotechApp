@@ -4,26 +4,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
 import console.infotech.myapplication.Utility.Utilities;
 
 public class MainActivity extends AppCompatActivity {
     LottieAnimationView animationView;
-    TextView dateAndTime;
+    TextView currentDate,currentTime;
     Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +30,40 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mContext=this;
         Intent intent = getIntent();
+
+        Thread t = new Thread(){
+            @Override
+            public void run(){
+                try{
+                    while (!isInterrupted()){
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                currentTime = findViewById(R.id.currentTime);
+                                long date = System.currentTimeMillis();
+                                SimpleDateFormat sdf = new SimpleDateFormat("kk:mm:ss");
+                                String dateString = sdf.format(date);
+                                currentTime.setText(dateString);
+                            }
+                        });
+                    }
+                }catch (InterruptedException e){
+
+                }
+            }
+        };
+        t.start();
         bind();
 
-        Date currentTime = Calendar.getInstance().getTime();
-//        dateAndTime.setText(currentTime.toString());
-        dateAndTime.setText(Utilities.getCurrentShamsidate());
+        Date currentTimeValue = Calendar.getInstance().getTime();
+//        currentTime.setText(currentTimeValue.toString());
+        currentDate.setText(Utilities.getCurrentShamsidate());
 
         animationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext,SettingActivity.class);
+                Intent intent = new Intent(mContext,EnterPasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -52,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void bind() {
 
-        dateAndTime = findViewById(R.id.dateAndTime);
+        currentDate = findViewById(R.id.currentDate);
         animationView = findViewById(R.id.animation_setting);
         animationView.playAnimation();
 

@@ -10,13 +10,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import console.infotech.myapplication.customView.MyButtonView;
 import console.infotech.myapplication.customView.MyEditTextView;
 
 public class EntryActivity extends AppCompatActivity implements View.OnClickListener {
-    TextView tvEntry;
-    MyButtonView btnOne,btnTwo,btnThree,btnFour,btnFive,btnSix,btnSeven,btnEight,btnNine,btnZero;
-    MyButtonView btnConfirm,btnDelete;
+     TextView tvEntry;
+
     MyEditTextView etEntryPass;
     Handler handler;
     Button btnTurnOff,btnSetting;
@@ -30,6 +28,30 @@ public class EntryActivity extends AppCompatActivity implements View.OnClickList
         bind();
         btnSetting.setOnClickListener(this);
         btnTurnOff.setOnClickListener(this);
+
+//        Thread t = new Thread(){
+//            @Override
+//            public void run(){
+//                try{
+//                    while (!isInterrupted()){
+//                        Thread.sleep(1000);
+//                        if (tvEntry.getVisibility() == View.VISIBLE)
+//                            tvEntry.setVisibility(View.INVISIBLE);
+//                        runOnUiThread(new Runnable() {
+//
+//                            @Override
+//                            public void run() {
+//                                if (tvEntry.getVisibility() == View.INVISIBLE)
+//                                    tvEntry.setVisibility(View.VISIBLE);
+//                            }
+//                        });
+//                    }
+//                }catch (InterruptedException e){
+//
+//                }
+//            }
+//        };
+//        t.start();
 
         handler=new Handler();
         handler.postDelayed(new Runnable() {
@@ -46,19 +68,6 @@ public class EntryActivity extends AppCompatActivity implements View.OnClickList
 
     private void bind() {
 
-        btnOne=findViewById(R.id.btnOne);
-        btnTwo=findViewById(R.id.btnTwo);
-        btnThree=findViewById(R.id.btnThree);
-        btnFour=findViewById(R.id.btnFour);
-        btnFive=findViewById(R.id.btnFive);
-        btnSix=findViewById(R.id.btnSix);
-        btnSeven=findViewById(R.id.btnSeven);
-        btnEight=findViewById(R.id.btnEight);
-        btnNine=findViewById(R.id.btnNine);
-        btnZero=findViewById(R.id.btnZero);
-
-        btnConfirm=findViewById(R.id.btnConfirm);
-        btnDelete=findViewById(R.id.btnDelete);
 
         btnSetting=findViewById(R.id.btnSetting);
         btnTurnOff=findViewById(R.id.btnTurnOff);
@@ -73,7 +82,7 @@ public class EntryActivity extends AppCompatActivity implements View.OnClickList
         if(v.getId()==R.id.btnTurnOff){
             finish();
         }else if(v.getId()==R.id.btnSetting){
-            Intent intent = new Intent(this,SettingActivity.class);
+            Intent intent = new Intent(this,EnterPasswordActivity.class);
             startActivity(intent);
 
         }
