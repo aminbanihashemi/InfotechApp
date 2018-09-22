@@ -25,6 +25,7 @@
         </activity>
         <activity
             android:name=".EnterPasswordActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
@@ -37,6 +38,7 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
         <activity android:name=".TerminalSettingActivity"
             android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
     </application>
 
