@@ -143,8 +143,9 @@ public class EnterPasswordActivity extends AppCompatActivity implements View.OnC
             return;
         }else {
             Toasty.success(this, "Success!", Toast.LENGTH_SHORT, true).show();
-            Intent intent=new Intent(EnterPasswordActivity.this,MainActivity.class);
+            Intent intent=new Intent(EnterPasswordActivity.this,SettingActivity.class);
             startActivity(intent);
+            finish();
         }
 
 

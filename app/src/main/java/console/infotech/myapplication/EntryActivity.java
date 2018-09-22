@@ -17,6 +17,7 @@ public class EntryActivity extends AppCompatActivity implements View.OnClickList
 
     MyEditTextView etEntryPass;
     Handler handler;
+    Runnable mRunnable;
     Button btnTurnOff,btnSetting;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,15 @@ public class EntryActivity extends AppCompatActivity implements View.OnClickList
         btnSetting.setOnClickListener(this);
         btnTurnOff.setOnClickListener(this);
 
+        mRunnable = new Runnable() {
+            @Override
+            public void run() {
+                Intent intent=new Intent(EntryActivity.this,MainActivity.class);
+                intent.putExtra("message", "12345");
+                startActivity(intent);
+                finish();
+            }
+        };
 //        Thread t = new Thread(){
 //            @Override
 //            public void run(){
@@ -53,16 +63,8 @@ public class EntryActivity extends AppCompatActivity implements View.OnClickList
 //        };
 //        t.start();
 
-        handler=new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent=new Intent(EntryActivity.this,MainActivity.class);
-                intent.putExtra("message", "12345");
-                startActivity(intent);
-                finish();
-            }
-        },5500);
+        handler = new Handler();
+        handler.postDelayed(mRunnable,5500);
 
     }
 
@@ -80,12 +82,21 @@ public class EntryActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.btnTurnOff){
-            finish();
+            finishAffinity();
+            handler.removeCallbacks(mRunnable);
         }else if(v.getId()==R.id.btnSetting){
             Intent intent = new Intent(this,EnterPasswordActivity.class);
             startActivity(intent);
+            handler.removeCallbacks(mRunnable);
+            finish();
 
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }
